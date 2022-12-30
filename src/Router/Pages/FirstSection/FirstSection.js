@@ -10,7 +10,7 @@ const FirstSection = ({ setcount }) => {
         const textarea = form.textarea.value;
 
         const response = await fetch(
-            "http://localhost:4000/posts/new",
+            "https://social-media-server-three-liart.vercel.app/posts/new",
             {
                 method: "POST",
                 headers: {

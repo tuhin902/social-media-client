@@ -5,7 +5,7 @@ const SecondSection = ({ count }) => {
     const [section, setsection] = useState();
 
     useEffect(() => {
-        fetch("http://localhost:4000/posts")
+        fetch("https://social-media-server-three-liart.vercel.app/posts")
             .then((res) => res.json())
             .then((data) => {
                 setsection(data);

@@ -4,7 +4,7 @@ import { AiTwotoneLike } from "react-icons/ai";
 
 const Singlemedia = ({ single }) => {
     const loveHandler = () => {
-        fetch("http://localhost:4000/", {
+        fetch("https://social-media-server-three-liart.vercel.app/", {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

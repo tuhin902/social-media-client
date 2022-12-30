@@ -9,7 +9,7 @@ const Edit = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:4000/users?email=${user?.email}`)
+        fetch(`https://social-media-server-three-liart.vercel.app/users?email=${user?.email}`)
             .then((res) => res.json())
             .then((data) => setabout(data));
     }, [user]);
@@ -23,7 +23,7 @@ const Edit = () => {
         const address = form.address.value;
         console.log(name, email, university, address);
 
-        fetch(`http://localhost:4000/users/${id}`, {
+        fetch(`https://social-media-server-three-liart.vercel.app/users/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Privateroute><Home></Home></Privateroute>
             },
             {
                 path: '/login',
@@ -30,21 +30,21 @@ const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About></About>
+                element: <Privateroute><About></About></Privateroute>
             },
             {
                 path: '/message',
-                element: <Message></Message>
+                element: <Privateroute><Message></Message></Privateroute>
             },
             { path: "/edit/:id", element: <Edit></Edit> },
             {
                 path: "/section",
-                element: <SecondSection></SecondSection>
+                element: <Privateroute><SecondSection></SecondSection></Privateroute>
             },
             {
                 path: "/media",
                 element: <Privateroute><Media></Media></Privateroute>,
-                loader: async () => fetch("http://localhost:4000/posts")
+                loader: async () => fetch("https://social-media-server-three-liart.vercel.app/posts")
             },
             {
                 path: "/detail/:id",

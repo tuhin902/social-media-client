@@ -22,7 +22,7 @@ const Signup = () => {
             .then((result) => {
                 const user = result.user;
                 if (user) {
-                    fetch("http://localhost:4000/users/new", {
+                    fetch("https://social-media-server-three-liart.vercel.app/users/new", {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

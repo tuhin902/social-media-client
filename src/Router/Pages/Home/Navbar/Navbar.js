@@ -9,21 +9,17 @@ const Navbar = () => {
     }
 
     const menuItem = <React.Fragment>
-        <li>
-            <Link to="/media">Media</Link>
-        </li>
-        <li>
-            <Link to="/message">Message</Link>
-        </li>
-        <li>
-            <Link to="/about">About</Link>
-        </li>
+
         {
             user ?
-                <button className='btn ' onClick={handleLogOut}>Sign Out</button>
+                <>
+                    <li><Link to="/media">Media</Link></li>
+                    <li><Link to="/message">Message</Link></li>
+                    <li> <Link to="/about">About</Link></li>
+                    <button className='btn ' onClick={handleLogOut}>Sign Out</button>
+                </>
                 :
                 <>
-
                     <li><Link to='/login'>Log in</Link></li>
                     <li><Link to='/signup'>Sign Up</Link></li>
                 </>

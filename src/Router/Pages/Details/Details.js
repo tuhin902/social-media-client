@@ -7,7 +7,7 @@ const Details = () => {
     const [details, setdetails] = useState([]);
 
     useEffect(() => {
-        fetch(` http://localhost:4000/detail/${postId}`)
+        fetch(` https://social-media-server-three-liart.vercel.app/detail/${postId}`)
             .then((res) => res.json())
             .then((data) => setdetails(data));
     }, [postId]);
