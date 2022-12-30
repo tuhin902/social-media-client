@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut();
+    }
 
     const menuItem = <React.Fragment>
         <li>
@@ -13,13 +18,20 @@ const Navbar = () => {
         <li>
             <Link to="/about">About</Link>
         </li>
-        <li>
-            <Link to="/login">Login</Link>
-        </li>
+        {
+            user ?
+                <button className='btn ' onClick={handleLogOut}>Sign Out</button>
+                :
+                <>
+
+                    <li><Link to='/login'>Log in</Link></li>
+                    <li><Link to='/signup'>Sign Up</Link></li>
+                </>
+        }
     </React.Fragment>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,12 +39,11 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {menuItem}
-
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">My Chat</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">My Media</Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {menuItem}
                 </ul>
